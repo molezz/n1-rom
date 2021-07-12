@@ -16,7 +16,7 @@ on:
         required: false
         default: 'false'
   schedule:
-    - cron: '0 17 * * 0'
+    - cron: '0 12 * * *'
 
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
@@ -171,6 +171,6 @@ jobs:
           Default password: password
           Default WIFI name: OpenWrt
           Default WIFI password: none
-          主要插件：passwall/广告屏蔽大师/微信推送/KMS/多拨/可道云/Zerotier/SQM/upnp/上网时间控制
+          主要插件：passwall/广告屏蔽大师/微信推送/KMS/多拨/可道云/Zerotier/SQM/upnp/上网时间控制/网络唤醒等
           写入emmc命令: openwrt-install 或/root/install-to-emmc.sh
 
