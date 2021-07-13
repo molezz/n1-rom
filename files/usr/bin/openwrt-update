@@ -852,7 +852,7 @@ rmdir ${P1} ${P2}
 rm -f ${IMG_NAME} 2>/dev/null
 sync
 
-echo "升级完成，系统将重启，请等待重启后，刷新页面!"
+echo "升级完成，系统将重启，请等待重启后，刷新页面!如果等不及也可以拔掉电源重启！"
 sleep 3
-echo 'b' > /proc/sysrq-trigger
+reboot
 
