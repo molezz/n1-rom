@@ -9,8 +9,8 @@
 # ------------------------------- Main source started -------------------------------
 #
 # Modify default theme（FROM uci-theme-bootstrap CHANGE TO luci-theme-material）
-sed -i 's/luci-theme-bootstrap/luci-theme-material/g' ./feeds/luci/collections/luci/Makefile
-sed -i 's/bootstrap/material/g' ./feeds/luci/modules/luci-base/root/etc/config/luci
+sed -i 's/luci-theme-bootstrap/luci-theme-infinityfreedom/g' ./feeds/luci/collections/luci/Makefile
+sed -i 's/bootstrap/infinityfreedom/g' ./feeds/luci/modules/luci-base/root/etc/config/luci
 
 # Modify some code adaptation
 sed -i 's/LUCI_DEPENDS.*/LUCI_DEPENDS:=\@\(arm\|\|aarch64\)/g' package/lean/luci-app-cpufreq/Makefile
@@ -36,6 +36,9 @@ sed -i 's/192.168.1.1/192.168.3.88/g' package/base-files/files/bin/config_genera
 
 # Add OpenAppFilter
 # svn co https://github.com/destan19/OpenAppFilter/trunk package/OpenAppFilter
+
+# luci-theme-infinityfreedom
+svn co https://github.com/cocokfeng/luci-theme-infinityfreedom/trunk package/luci-theme-infinityfreedom
 
 # Add luci-app-serverchan
 svn co https://github.com/tty228/luci-app-serverchan/trunk package/luci-app-serverchan

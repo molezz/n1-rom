@@ -9,8 +9,8 @@
 # ------------------------------- Main source started -------------------------------
 #
 # Modify default theme（FROM uci-theme-bootstrap CHANGE TO luci-theme-material）
-sed -i 's/luci-theme-bootstrap/luci-theme-material/g' ./feeds/luci/collections/luci/Makefile
-sed -i 's/bootstrap/material/g' ./feeds/luci/modules/luci-base/root/etc/config/luci
+sed -i 's/luci-theme-bootstrap/luci-theme-infinityfreedom/g' ./feeds/luci/collections/luci/Makefile
+sed -i 's/bootstrap/infinityfreedom/g' ./feeds/luci/modules/luci-base/root/etc/config/luci
 
 # Modify some code adaptation
 sed -i 's/LUCI_DEPENDS.*/LUCI_DEPENDS:=\@\(arm\|\|aarch64\)/g' package/lean/luci-app-cpufreq/Makefile
@@ -42,6 +42,9 @@ svn co https://github.com/ophub/luci-app-amlogic/trunk/luci-app-amlogic package/
 
 # Add OpenAppFilter
 # svn co https://github.com/destan19/OpenAppFilter/trunk package/OpenAppFilter
+
+# luci-theme-infinityfreedom
+svn co https://github.com/cocokfeng/luci-theme-infinityfreedom/trunk package/luci-theme-infinityfreedom
 
 # Add luci-app-passwall
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk package/openwrt-passwall
