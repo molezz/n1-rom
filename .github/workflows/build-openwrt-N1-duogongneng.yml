@@ -171,7 +171,7 @@ jobs:
           Default password: password
           Default WIFI name: OpenWrt
           Default WIFI password: none
-          主要插件：passwall/广告屏蔽大师/微信推送/KMS/多拨/可道云/Zerotier/SQM/upnp/上网时间控制/网络唤醒等
+          主要插件：passwall/广告屏蔽大师/微信推送/KMS/多拨/可道云/Zerotier/SQM/upnp/上网时间控制/网络唤醒/透明主题luci-theme-infinityfreedom等
             比精简自用版主要增加：ddns/adguardhome/docker/frps/openclash/京东签到/TTYD/qbittorrent/USB打印/硬盘休眠等
           写入emmc命令: openwrt-install
           在线升级设置：
