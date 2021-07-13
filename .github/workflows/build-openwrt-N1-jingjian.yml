@@ -164,7 +164,7 @@ jobs:
         tag_name: openwrt_armvirt_n1_zy_${{ env.PACKAGED_OUTPUTDATE }}
         files: ${{ env.PACKAGED_OUTPUTPATH }}/*
         body: |
-          N1盒子-精简自用版（不含docker)
+          N1盒子-精简自用版1（不含docker)
           * 固件信息
           Default IP: 192.168.3.88
           Default username: root
@@ -173,4 +173,8 @@ jobs:
           Default WIFI password: none
           主要插件：passwall/广告屏蔽大师/微信推送/KMS/多拨/可道云/Zerotier/SQM/upnp/上网时间控制/网络唤醒等
           写入emmc命令: openwrt-install 或/root/install-to-emmc.sh
-
+          在线升级设置：
+          OpenWrt 固件下载仓库：cocokfeng/n1-rom
+          OpenWrt 固件标签关键字：n1_zy
+          OpenWrt 固件文件后缀：.img.gz
+          OpenWrt 内核下载路径：n1/kernel
