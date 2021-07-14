@@ -22,22 +22,14 @@ m.reset = false
 m.submit = false
 
 --SimpleForm for Config Source
-b = SimpleForm("amlogic_check", translate("Plugin Settings"), nil)
-b.description = translate("You can customize the download site of OpenWrt firmware and kernel in [Download Updates Online].")
+b = SimpleForm("amlogic_check", translate("在线更新设置"), nil)
+b.description = translate("设置【在线下载更新】功能需要的固件地址资源相关信息，如果在线升级速度慢，你可以下载后上传升级，也可以尝试挂梯子升级.")
 b.reset = false
 b.submit = false
 s = b:section(SimpleSection, "", "")
 
---1.Display config instructions
-o=s:option(Flag,"more",translate("Display config instructions:"))
-o.rmempty=false
 
---2.SimpleForm for Check
-o = s:option(TextValue, "display_config", nil)
-o.template = "amlogic/other_config"
-o:depends("more", "1")
-
---3.Set OpenWrt Firmware Repository
+--1.Set OpenWrt Firmware Repository
 o = s:option(Value, "firmware_repo", translate("OpenWrt Firmware Repository:"))
 o.rmempty = true
 o.default = amlogic_firmware_repo
@@ -51,7 +43,7 @@ o.write = function(self, key, value)
 	end
 end
 
---4.Set OpenWrt Releases Tag Keywords
+--2.Set OpenWrt Releases Tag Keywords
 o = s:option(Value, "firmware_tag", translate("OpenWrt Releases Tag Keywords:"))
 o.rmempty = true
 o.default = amlogic_firmware_tag
@@ -65,7 +57,7 @@ o.write = function(self, key, value)
 	end
 end
 
---5.Set OpenWrt Firmware Suffix
+--3.Set OpenWrt Firmware Suffix
 o = s:option(Value, "firmware_suffix", translate("OpenWrt Firmware Suffix:"))
 o.rmempty = true
 o.default = amlogic_firmware_suffix
@@ -79,7 +71,7 @@ o.write = function(self, key, value)
 	end
 end
 
---6.Set OpenWrt Kernel DownLoad Path
+--4.Set OpenWrt Kernel DownLoad Path
 o = s:option(Value, "kernel_repo", translate("OpenWrt Kernel DownLoad Path:"))
 o.rmempty = true
 o.default = amlogic_kernel_path
@@ -93,7 +85,7 @@ o.write = function(self, key, value)
 	end
 end
 
---7.Save button
+--5.Save button
 o = s:option(Button, "", translate("Save Config:"))
 o.template = "amlogic/other_button"
 o.render = function(self, section, scope)

@@ -38,7 +38,7 @@ svn co https://github.com/rufengsuixing/luci-app-adguardhome/trunk package/luci-
 svn co https://github.com/tty228/luci-app-serverchan/trunk package/luci-app-serverchan
 
 # Add luci-app-amlogic
-svn co https://github.com/ophub/luci-app-amlogic/trunk/luci-app-amlogic package/luci-app-amlogic
+svn co https://github.com/cocokfeng/luci-app-amlogic/trunk/luci-app-amlogic package/luci-app-amlogic
 
 # Add OpenAppFilter
 # svn co https://github.com/destan19/OpenAppFilter/trunk package/OpenAppFilter
@@ -54,8 +54,8 @@ svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash package/o
 pushd package/openwrt-openclash/tools/po2lmo && make && sudo make install 2>/dev/null && popd
 
 # Add luci-app-ssr-plus
-svn co https://github.com/fw876/helloworld/trunk/luci-app-ssr-plus package/openwrt-ssrplus
-rm -rf package/openwrt-ssrplus/luci-app-ssr-plus/po/zh_Hans 2>/dev/null
+# svn co https://github.com/fw876/helloworld/trunk/luci-app-ssr-plus package/openwrt-ssrplus
+# rm -rf package/openwrt-ssrplus/luci-app-ssr-plus/po/zh_Hans 2>/dev/null
 
 # coolsnowwolf default software package replaced with Lienol related software package
 # rm -rf feeds/packages/utils/{containerd,libnetwork,runc,tini}
