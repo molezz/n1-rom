@@ -8,7 +8,7 @@ luci.sys.exec("echo '' > /tmp/amlogic/amlogic_check_plugin.log && sync >/dev/nul
 luci.sys.exec("echo '' > /tmp/amlogic/amlogic_check_kernel.log && sync >/dev/null 2>&1")
 
 --SimpleForm for Update OpenWrt firmware/kernel
-b = SimpleForm("upload", translate("Upload"), nil)
+b = SimpleForm("upload", translate("上传---[固件]--[内核]--[软件包]--[备份文件]"), nil)
 b.description = translate("当上传 [固件], [内核], [IPK] or [设置备份文件] 后, 将自动显示相关操作按钮--本升级程序改自ophub的amlogic插件.")
 b.reset = false
 b.submit = false
