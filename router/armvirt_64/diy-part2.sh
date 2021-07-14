@@ -37,6 +37,10 @@ svn co https://github.com/rufengsuixing/luci-app-adguardhome/trunk package/luci-
 # Add luci-app-serverchan
 svn co https://github.com/tty228/luci-app-serverchan/trunk package/luci-app-serverchan
 
+# Add haproxy2.4.2
+rm -f package/feeds/packages/haproxy
+svn co https://github.com/cocokfeng/haproxy/trunk package/feeds/packages/haproxy
+
 # Add luci-app-amlogic
 svn co https://github.com/cocokfeng/luci-app-amlogic/trunk/luci-app-amlogic package/luci-app-amlogic
 

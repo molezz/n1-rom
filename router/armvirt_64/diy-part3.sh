@@ -37,6 +37,10 @@ sed -i 's/192.168.1.1/192.168.3.88/g' package/base-files/files/bin/config_genera
 # Add OpenAppFilter
 # svn co https://github.com/destan19/OpenAppFilter/trunk package/OpenAppFilter
 
+# Add haproxy2.4.2
+rm -f package/feeds/packages/haproxy
+svn co https://github.com/cocokfeng/haproxy/trunk package/feeds/packages/haproxy
+
 # luci-theme-infinityfreedom
 svn co https://github.com/cocokfeng/luci-theme-infinityfreedom/trunk package/luci-theme-infinityfreedom
 
