@@ -171,8 +171,7 @@ jobs:
           Default password: password
           Default WIFI name: OpenWrt
           Default WIFI password: none
-          主要插件：passwall/KMS/多拨/可道云/upnp/上网时间控制/透明主题等
-          比精简自用版1减少:IPV6、qos、arp绑定等，极致精简了，只为passwall。
+          主要插件：比精简自用版1减少:IPV6/文件传输/zerotier/广告屏蔽大师/微信推送等，极致精简了，只为passwall多拨配合负载均衡。
           写入emmc命令: openwrt-install
           在线升级设置：
           OpenWrt 固件下载仓库：cocokfeng/n1-rom

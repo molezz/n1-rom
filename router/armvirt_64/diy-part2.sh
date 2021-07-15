@@ -9,7 +9,7 @@
 # ------------------------------- Main source started -------------------------------
 #
 # Modify default theme（FROM uci-theme-bootstrap CHANGE TO luci-theme-material）
-sed -i 's/luci-theme-bootstrap/luci-theme-infinityfreedom/g' ./feeds/luci/collections/luci/Makefile
+sed -i 's/luci-theme-bootstrap/luci-theme-material/g' ./feeds/luci/collections/luci/Makefile
 
 # Modify some code adaptation
 sed -i 's/LUCI_DEPENDS.*/LUCI_DEPENDS:=\@\(arm\|\|aarch64\)/g' package/lean/luci-app-cpufreq/Makefile
@@ -36,6 +36,7 @@ svn co https://github.com/rufengsuixing/luci-app-adguardhome/trunk package/luci-
 # Add luci-theme-argon
 rm -rf package/lean/luci-theme-argon
 git clone -b 18.06  https://github.com/jerrykuku/luci-theme-argon.git package/lean/luci-theme-argon
+svn co https://github.com/jerrykuku/luci-app-argon-config/trunk package/luci-app-argon-config
 
 # Add luci-app-serverchan
 svn co https://github.com/tty228/luci-app-serverchan/trunk package/luci-app-serverchan

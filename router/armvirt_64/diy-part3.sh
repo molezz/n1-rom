@@ -9,7 +9,7 @@
 # ------------------------------- Main source started -------------------------------
 #
 # Modify default theme（FROM uci-theme-bootstrap CHANGE TO luci-theme-material）
-sed -i 's/luci-theme-bootstrap/luci-theme-infinityfreedom/g' ./feeds/luci/collections/luci/Makefile
+sed -i 's/luci-theme-bootstrap/luci-theme-material/g' ./feeds/luci/collections/luci/Makefile
 
 # Modify some code adaptation
 sed -i 's/LUCI_DEPENDS.*/LUCI_DEPENDS:=\@\(arm\|\|aarch64\)/g' package/lean/luci-app-cpufreq/Makefile
@@ -39,7 +39,7 @@ sed -i 's/192.168.1.1/192.168.3.88/g' package/base-files/files/bin/config_genera
 # Add luci-theme-argon
 rm -rf package/lean/luci-theme-argon
 git clone -b 18.06  https://github.com/jerrykuku/luci-theme-argon.git package/lean/luci-theme-argon
-
+svn co https://github.com/jerrykuku/luci-app-argon-config/trunk package/luci-app-argon-config
 
 # Add haproxy2.4.2
 rm -f package/feeds/packages/haproxy
