@@ -33,7 +33,7 @@ function index()
 	end
 
 
-	entry({"admin", "system", "reboot"}, template("admin_system/reboot"), _("Reboot"), 90)
+	entry({"admin", "system", "reboot"}, template("admin_system/reboot"), _("Reboot"), 901)
 	entry({"admin", "system", "reboot", "call"}, post("action_reboot"))
 end
 

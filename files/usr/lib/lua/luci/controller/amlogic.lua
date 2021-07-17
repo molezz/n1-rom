@@ -7,7 +7,6 @@ function index()
     entry({"admin", "system", "amlogic", "upload"},cbi("amlogic/amlogic_upload"),_("手动上传更新"), 3).leaf = true
     entry({"admin", "system", "amlogic", "check"},cbi("amlogic/amlogic_check"),_("在线下载更新"), 4).leaf = true
     entry({"admin", "system", "amlogic", "backup"},cbi("amlogic/amlogic_backup"),_("备份固件设置"), 5).leaf = true
-    entry({"admin", "system", "amlogic", "config"},cbi("amlogic/amlogic_config"),_("在线更新设置"), 6).leaf = true
     entry({"admin", "system", "amlogic", "log"},cbi("amlogic/amlogic_log"),_("操作日志"), 7).leaf = true
     entry({"admin", "system", "amlogic", "check_firmware"},call("action_check_firmware"))
     entry({"admin", "system", "amlogic", "check_plugin"},call("action_check_plugin"))

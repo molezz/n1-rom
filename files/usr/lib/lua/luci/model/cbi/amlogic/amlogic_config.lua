@@ -23,28 +23,16 @@ m.submit = false
 
 --SimpleForm for Config Source
 b = SimpleForm("amlogic_check", translate("在线更新设置"), nil)
-b.description = translate("设置【在线下载更新】功能需要的固件地址资源相关信息，如果在线升级速度慢，你可以下载后上传升级，也可以尝试挂梯子升级.")
+b.description = translate("设置【在线下载更新】功能更新的固件版本( 多功能版: n1_lede 、精简自用1: n1_zy 、精简自用2: n1_zy2 )")
 b.reset = false
 b.submit = false
 s = b:section(SimpleSection, "", "")
 
 
---1.Set OpenWrt Firmware Repository
-o = s:option(Value, "firmware_repo", translate("固件仓库地址:"))
-o.rmempty = true
-o.default = amlogic_firmware_repo
-o.write = function(self, key, value)
-	if value == "" then
-        --self.description = translate("Invalid value.")
-        amlogic_firmware_repo = default_firmware_repo
-	else
-        --self.description = translate("OpenWrt Firmware Repository:") .. value
-        amlogic_firmware_repo = value
-	end
-end
 
---2.Set OpenWrt Releases Tag Keywords
-o = s:option(Value, "firmware_tag", translate("固件标签关键字:"))
+--1.Set OpenWrt Releases Tag Keywords
+o = s:option(Value, "firmware_tag", translate("选择在线更新固件版本:"))
+
 o.rmempty = true
 o.default = amlogic_firmware_tag
 o.write = function(self, key, value)
@@ -58,22 +46,7 @@ o.write = function(self, key, value)
 end
 
 
-
---3.Set OpenWrt Kernel DownLoad Path
-o = s:option(Value, "kernel_repo", translate("固件内核路径:"))
-o.rmempty = true
-o.default = amlogic_kernel_path
-o.write = function(self, key, value)
-	if value == "" then
-        --self.description = translate("Invalid value.")
-        amlogic_kernel_path = default_kernel_path
-	else
-        --self.description = translate("OpenWrt Kernel DownLoad Path:") .. value
-        amlogic_kernel_path = value
-	end
-end
-
---4.Save button
+--2.Save button
 o = s:option(Button, "", translate("Save Config:"))
 o.template = "amlogic/other_button"
 o.render = function(self, section, scope)
@@ -84,9 +57,7 @@ o.render = function(self, section, scope)
 	Button.render(self, section, scope)
 end
 o.write = function(self, section, scope)
-	luci.sys.exec("uci set amlogic.config.amlogic_firmware_repo=" .. amlogic_firmware_repo .. " 2>/dev/null")
 	luci.sys.exec("uci set amlogic.config.amlogic_firmware_tag=" .. amlogic_firmware_tag .. " 2>/dev/null")
-	luci.sys.exec("uci set amlogic.config.amlogic_kernel_path=" .. amlogic_kernel_path .. " 2>/dev/null")
 	luci.sys.exec("uci commit amlogic 2>/dev/null")
 	http.redirect(DISP.build_url("admin", "system", "amlogic", "config"))
 	--self.description = "amlogic_firmware_repo: " .. amlogic_firmware_repo
