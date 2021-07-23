@@ -5,7 +5,7 @@ local b
 
 --SimpleForm for Backup Config
 b = SimpleForm("backup", translate("Backup Firmware Config"), nil)
-b.description = translate("备份你的固件设置 (文件名openwrt_config.tar.gz). 需要恢复时，只需使用 [在线下载更新] 功能恢复设置即可.")
+b.description = translate("备份你的固件设置 (文件名openwrt_config.tar.gz). 需要恢复时，只需使用 [手动上传更新] 功能恢复设置即可.")
 b.reset = false
 b.submit = false
 s = b:section(SimpleSection, "", "")
