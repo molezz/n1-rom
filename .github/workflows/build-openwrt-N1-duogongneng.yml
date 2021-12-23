@@ -38,7 +38,7 @@ jobs:
     if: github.event.repository.owner.id == github.event.sender.id
 
     steps:
-    - name: 开始运行
+    - name: 工作流程开始
       uses: actions/checkout@v2
 
     - name: 初始化环境
@@ -125,7 +125,7 @@ jobs:
         echo "TMPFILEPATH=$PWD" >> $GITHUB_ENV
         echo "::set-output name=status::success"
         
-    - name: Upload armvirt directory to Actions
+    - name: 将armvirt加载到工作目录
       uses: actions/upload-artifact@v2
       if: steps.organize.outputs.status == 'success' && env.UPLOAD_ARMVIRT == 'true' && !cancelled()
       with:
@@ -133,8 +133,6 @@ jobs:
         path: ${{ env.TMPFILEPATH }}
         retention-days: ${{ env.RECENT_LASTEST }}
         if-no-files-found: ignore
-
-
 
     - name: 打包固件
       if: steps.compile.outputs.status == 'success' && !cancelled()
