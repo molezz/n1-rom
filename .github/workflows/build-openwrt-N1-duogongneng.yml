@@ -38,10 +38,10 @@ jobs:
     if: github.event.repository.owner.id == github.event.sender.id
 
     steps:
-    - name: Checkout
+    - name: 开始运行
       uses: actions/checkout@v2
 
-    - name: Initialization environment
+    - name: 初始化环境
       env:
         DEBIAN_FRONTEND: noninteractive
       run: |
@@ -60,12 +60,14 @@ jobs:
         df -hT $PWD
         git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
+        
     - name: Load custom feeds
       run: |
         [ -e $FEEDS_CONF ] && mv $FEEDS_CONF openwrt/feeds.conf.default
         chmod +x $DIY_P1_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P1_SH
+        
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a
 
@@ -79,6 +81,7 @@ jobs:
         chmod +x $DIY_P2_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
+        
     - name: Download package
       id: package
       run: |
@@ -87,7 +90,9 @@ jobs:
         make download -j8
         find dl -size -1024c -exec ls -l {} \;
         find dl -size -1024c -exec rm -f {} \;
-    - name: Compile the firmware
+        
+        
+    - name: 编译固件
       id: compile
       run: |
         cd openwrt
@@ -129,7 +134,7 @@ jobs:
 
 
 
-    - name: Package Armvirt as OpenWrt
+    - name: 打包固件
       if: steps.compile.outputs.status == 'success' && !cancelled()
       uses: cocokfeng/flippy-openwrt-actions@main
       env:
@@ -141,7 +146,7 @@ jobs:
       with:
         path: ${{ env.PACKAGED_OUTPUTPATH }}/
 
-    - name: Upload OpenWrt Firmware to Release
+    - name: 发布固件
       uses: cocokfeng/action-gh-release@v1
       if: env.PACKAGED_STATUS == 'success' && env.UPLOAD_RELEASE == 'true' && !cancelled()
       env:
