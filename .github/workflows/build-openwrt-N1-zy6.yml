@@ -150,7 +150,7 @@ jobs:
         tag_name: openwrt_armvirt_n1_zy6_${{ env.PACKAGED_OUTPUTDATE }}
         files: ${{ env.PACKAGED_OUTPUTPATH }}/*
         body: |
-          N1盒子-精简自用版6（自用版5的passwall更换成ssrplus)
+          N1盒子-精简自用版6
           * 固件信息
           Default IP: 192.168.3.88
           Default username: root
