@@ -157,6 +157,6 @@ jobs:
           Default password: password
           Default WIFI name: OpenWrt
           Default WIFI password: none
-          主要插件：比精简自用版3去掉多拨，pw换成sr。
+          主要插件：精简自用版3去掉多拨。
           写入emmc命令: openwrt-install
           在线升级设置：n1_zy5
