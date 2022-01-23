@@ -6,6 +6,13 @@ N1盒子openwrt 云编译系统，每天自动使用最新lede源码和F大最�
 
 -[固件个性化定制说明 ](README.cn.md)--为了大家学会自己定制固件，特出个最简单的教程，人人都能学会
 
+晶晨宝盒升级设置：
+OpenWrt 固件的下载仓库：https://github.com/cocokfeng/n1-rom
+Releases 里 Tags 的关键字：lede zy1 zy2 zy3 zy5 zy6 六种选一个
+其他默认即可
+
+
+
 本项目基于ophub的项目及以下项目修改，感谢!
 
 ## Acknowledgments
